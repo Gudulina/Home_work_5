@@ -25,21 +25,36 @@ void Print(int[] arr)
     Console.WriteLine();
 }
 
-void Summa(int[] arr)
+int Max(int[] arr)
 {
-    int size = arr.Length;
-    int temp = 0;
-    for (int i = 1; i < size; i+=2)
+    int index = 0;
+    int max = arr[index];
+    for (index = 1; index < arr.Length; index++)
     {
-        temp += arr[i];
+        if (arr[index] > max)
+            max = arr[index];
     }
-    Console.WriteLine($"Сумма чисел на нечетных позициях = {temp}");
+    return max;
+}
+
+int Min(int[] arr)
+{
+    int index = 0;
+    int min = arr[index];
+    for (index = 1; index < arr.Length; index++)
+    {
+        if (arr[index] < min)
+            min = arr[index];
+    }
+    return min;
 }
 
 int[] arr1 = Array();
 Print(arr1);
-Summa(arr1);
+Max(arr1);
+Console.WriteLine ($"Разница между {Max (arr1)} и {Min (arr1)} = {Max (arr1) - Min (arr1)}");
 
 int[] arr2 = Array();
 Print(arr2);
-Summa(arr2);
+Min(arr2);
+Console.WriteLine ($"Разница между {Max (arr2)} и {Min (arr2)} = {Max (arr2) - Min (arr2)}");
